@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock-app</title>
+    <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <style>
+      #clock {
+        font-family: 'Seven Segment', sans-serif;
+      }
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4f46e5;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #4f46e5;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+.light {
+    background-color: #ffffff;
+    color: #333333;
+}
+.dark {
+    background-color: #333333;
+    color: #ffffff;
+}
+.dark #clock {
+    color: white
+}
+body {
+    background-color: #f7f7f7;
+}
+
+.container {
+    margin-top: 100px;
+}
+
+#clock {
+    color: #333;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    margin-right: 10px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 20px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 2px;
+    bottom: 2px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+input:checked + .slider {
+    background-color: #4f46e5;
+}
+input:focus + .slider {
+    box-shadow: 0 0 1px #4f46e5;
+}
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+.dark #alarm-settings {
+    color:white
+}
+.dark #alarmTime {
+    color: black
+}
+    </style>
+    <div class="container mx-auto text-center mt-10">
+        <h1>it is</h1>
+        <div class="text-6xl font-bold" id="clock"></div>
+        <h1>ya dingus</h1>
+        <h1 class="mt-8"><strong>Current Weather</strong>: idk go outside and check</h1>
+    </div>
+
+    <div class="fixed top-0 right-0 p-4">
+        <div class="space-y-2">
+            <div>
+                <label class="block text-lg font-semibold">Show Seconds</label>
+                <label class="switch">
+                    <input type="checkbox" id="toggleSeconds">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div>
+                <label class="block text-lg font-semibold">Dark/Light</label>
+                <label class="switch">
+                    <input type="checkbox" id="toggleTheme">
+                    <span class="slider"></span>
+                </label>
+            </div>
+            <div>
+                <label class="block text-lg font-semibold">24hr/12hr</label>
+                <label class="switch">
+                    <input type="checkbox" id="toggleFormat">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div id="alarm-settings" class="text-black p-4">
+        <label for="alarmTime" class="block mb-2">Set Alarm Time:</label>
+        <input type="time" id="alarmTime" class="border border-gray-300 px-2 py-1 rounded-md mb-2">
+        <br>
+        <button id="setAlarm" class="bg-green-500 text-white px-4 py-2 rounded-md mr-2 hover:bg-green-600">Set Alarm</button>
+        <button id="stopAlarm" class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600">Stop Alarm</button>
+        <label for="alarmSound" class="block mb-2">Upload Alarm Sound:</label>
+        <input type="file" id="alarmSound" accept=".mp3, .wav" class="border border-gray-300 px-2 py-1 rounded-md mb-2">
+      
+        
+    </div>
+    
+    
+    
+    <script src="clock.js"></script>
+</body>
+</html>
