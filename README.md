@@ -1,5 +1,5 @@
 # clock-app
-a simple clock/alarm app for my raspberry pi, but it can be built for any major os or distro
+a simple clock/alarm app 
 
 ### usage instructions since not everyone here is a super mega nerd who knows how to use electron applications
 - first things first, im not gonna build it for you i'm too tired (so youre gonna have to deal with just running it from source)
